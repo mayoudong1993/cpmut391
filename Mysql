@@ -1,0 +1,10 @@
+create table persons(username	varchar(16),password	varchar(16),firstname	varchar(16),lastname	varchar(16),address		varchar(16),email		varchar(16),Phone_number	varchar(16),primary key (username));
+
+
+drop table persons;
+
+
+create table picture(pic_id int, pic_desc varchar(100),pic BLOB , primary key(pic_id));
+
+
+create table has(username  varchar(16), pic_id int,   PRIMARY KEY (username, pic_id), FOREIGN KEY (username) REFERENCES persons, FOREIGN KEY (pic_id) REFERENCES picture);
